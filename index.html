@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="search-page">
+
+  <div class="search-wrapper">
+
+    <!-- Google-style Logo -->
+    <div class="google-logo">
+      <span class="g blue">G</span>
+      <span class="g red">o</span>
+      <span class="g yellow">o</span>
+      <span class="g blue">g</span>
+      <span class="g green">l</span>
+      <span class="g red">e</span>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-box">
+      <input 
+        type="text"
+        class="search-bar"
+        placeholder="Search Google or type a URL"
+        onclick="showDropdown()"
+        readonly
+      >
+
+      <!-- Dropdown -->
+      <div class="dropdown" id="dropdown">
+        <div class="dropdown-item" onclick="revealBirthday()">
+          <span class="icon">🕒</span>
+          Whose birthday is it today?
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function showDropdown() {
+      document.getElementById("dropdown").style.display = "block";
+    }
+
+    function revealBirthday() {
+      window.location.href = "birthday.html";
+    }
+
+    // Close dropdown if clicked outside
+    document.addEventListener("click", function(e) {
+      if (!e.target.classList.contains("search-bar")) {
+        document.getElementById("dropdown").style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>
